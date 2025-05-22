@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animer chaque icône avec ScrollTrigger
     heroIcons.forEach((icon, index) => {
         // Générer une valeur Y aléatoire entre -80 et -30
-        const randomY = gsap.utils.random(-80, -30);
+        const randomY = gsap.utils.random(-40, -10);
         // Calculer l'opacité relative à la distance Y (plus la distance est grande, plus l'ombre est visible)
-        const shadowOpacity = gsap.utils.mapRange(-80, -30, 0.3, 0.7, randomY);
+        const shadowOpacity = gsap.utils.mapRange(-40, -10, 0.3, 0.7, randomY);
         
         // Appliquer le délai uniquement pour les icônes en haut
         const isTopIcon = topIcons.includes(icon);
