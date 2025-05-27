@@ -3,10 +3,12 @@ let SCROLL_TRIGGER_START = "top center+=50px";
 let EASE = 'power3.inOut';
 let DELAY_INCREMENT = 0.2; // Délai de 0.2 secondes entre chaque animation
 let H1_DECAL_Y = 30; 
+let H1_DELAY = 3000;
 
 // Tableau de mots pour l'animation
 let words = ["blonde", "bien", "longoria", "vien", "ferme la porte"];
 let usedWords = []; // Tableau pour suivre les mots déjà utilisés
+let isFirstAnimation = true; // Flag pour suivre si c'est la première animation
 
 function initH1Intro() {
     const h1 = document.querySelector('h1');
@@ -33,11 +35,12 @@ function initH1Intro() {
                 width: document.querySelector('h1 .h1-fx-target').offsetWidth,
                 opacity: 1,
                 ease: "power2.inOut"
+             
             });
         },
         onComplete: () => {
             // Une fois l'animation d'intro terminée, on lance l'animation du mot changeant
-            initTextAnimation();
+             initTextAnimation();
         }
     });
 }
@@ -56,7 +59,7 @@ function initTextAnimation() {
     
     // Animation initiale
     gsap.set(chars, { opacity: 0, y: H1_DECAL_Y * -1 });
-
+    
     function animateText() {
         // Si tous les mots ont été utilisés, réinitialiser la liste
         if (usedWords.length === words.length) {
@@ -76,7 +79,12 @@ function initTextAnimation() {
         splitText.revert();
         const newSplitText = new SplitText(span, { type: "chars,words" });
         const newChars = newSplitText.chars;
-        gsap.set(newChars, { opacity: 0, y: H1_DECAL_Y * -1 });
+
+        // N'appliquer le set que si ce n'est pas la première animation
+        if (!isFirstAnimation) {
+            gsap.set(newChars, { opacity: 0, y: H1_DECAL_Y * -1 });
+        }
+        isFirstAnimation = false;
 
         // Ajuster la largeur du fond
         gsap.to(bgElement, {
@@ -107,7 +115,7 @@ function initTextAnimation() {
                             animateText();
                         }
                     });
-                }, 1000); // Attendre 1 seconde avant de changer le mot
+                }, H1_DELAY); // Attendre 10 seconde avant de changer le mot
             }
         });
     }
