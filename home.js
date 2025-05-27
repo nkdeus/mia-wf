@@ -2,11 +2,11 @@
 let SCROLL_TRIGGER_START = "top center+=50px";
 let EASE = 'power3.inOut';
 let DELAY_INCREMENT = 0.2; // Délai de 0.2 secondes entre chaque animation
-let H1_DECAL_Y = 30; 
-let H1_DELAY = 3000;
+let H1_DECAL_Y = -30; 
+let H1_DELAY = 1666;
 
 // Tableau de mots pour l'animation
-let words = ["blonde", "bien", "longoria", "vien", "ferme la porte"];
+let words = ["accès", "apps", "users", "couts", "sass"];
 let usedWords = []; // Tableau pour suivre les mots déjà utilisés
 let isFirstAnimation = true; // Flag pour suivre si c'est la première animation
 
@@ -18,7 +18,7 @@ function initH1Intro() {
     // Animation initiale
     gsap.set(words, { 
         opacity: 0,
-        y: 30
+        y: H1_DECAL_Y * -1
     });
 
     // Animation d'entrée
@@ -62,6 +62,9 @@ function initTextAnimation() {
     
     function animateText() {
         // Si tous les mots ont été utilisés, réinitialiser la liste
+        if(isFirstAnimation){
+            usedWords.push(words[0]);
+        }
         if (usedWords.length === words.length) {
             usedWords = [];
         }
@@ -90,16 +93,17 @@ function initTextAnimation() {
         gsap.to(bgElement, {
             width: span.offsetWidth,
             duration: 0.5,
-            ease: "power2.inOut"
+            ease: "power4.inOut"
         });
 
         // Animation des lettres
         gsap.to(newChars, {
             opacity: 1,
             y: 0,
-            duration: 0.5,
-            stagger: 0.02,
-            ease: "power2.inOut",
+            duration: 0.8,
+            stagger: 0.05,
+            overwrite: "auto",
+            ease: "power4.out",
             onComplete: () => {
                 // Attendre avant de changer le mot
                 setTimeout(() => {
@@ -107,9 +111,10 @@ function initTextAnimation() {
                     gsap.to(newChars, {
                         opacity: 0,
                         y: H1_DECAL_Y,
-                        duration: 0.5,
-                        stagger: 0.02,
-                        ease: "power2.inOut",
+                        duration: 0.4,
+                        stagger: 0.05,
+                        ease: "power4.in",
+                        overwrite: "auto",
                         onComplete: () => {
                             // Attendre avant de changer le mot
                             animateText();
