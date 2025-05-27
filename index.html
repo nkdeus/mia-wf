@@ -6,11 +6,22 @@
     <title>Mia - WF</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/gsap/3.13.0/SplitText.min.js"></script>
+   
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100svh;
+            position: relative;
+            overflow: visible;
         }
 
         .stage-hero {
@@ -26,6 +37,11 @@
             top: 50%;
             left: 50%;
           
+        }
+
+        .shadow{
+            top: 20%;
+            left: 50%;
         }
 
         .icon-0{
@@ -47,11 +63,45 @@
             left:70%;
             top:30%
         }
-
+        h1{
+            font-size: 100px;
+            z-index: 10;
+            top:50vh;
+            transform: translateY(-50%);
+            position: relative;
+            position: sticky;
+            opacity: 0;
+        }
+        .h1-fx-word{           
+            color:transparent;
+            width: 20rem;
+            display: inline-block;
+            position: relative;
+        }
+        .h1-fx-target{
+            color:white;
+            padding-inline: 2rem;
+            position: absolute;
+            left: 0px; 
+            width: max-content;     
+            z-index: 2;
+        }
+        .h1-fx-bg{
+            position: absolute;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(56, 56, 68);
+            border-radius: 60px;
+            z-index: 1;
+            opacity: 0;
+        }
      
     </style>
 </head>
 <body>
+
+    <h1>Eva est <span class="h1-fx-word">blonde<span class="h1-fx-target">blonde</span><span class="h1-fx-bg"></span></span></h1>
     <div class="stage-hero">
 
         <div class="hero-icon-base icon-0">
@@ -88,6 +138,13 @@
                 <stop offset="0.99" stop-color="#564BE0"/>
                 </linearGradient>
                 </defs>
+                </svg>
+                
+        </div>
+
+        <div class="hero-icon-base shadow">
+            <svg width="80" height="48" viewBox="0 0 80 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M39.0134 47.5701L0.971228 25.5925C-0.321579 24.8436 -0.324822 22.9762 0.967985 22.2273L38.7445 0.262603C39.3472 -0.0875345 40.0891 -0.0875345 40.6918 0.262603L78.734 22.2402C80.0268 22.9892 80.0301 24.8566 78.7373 25.6055L40.9607 47.5701C40.3581 47.9203 39.6161 47.9203 39.0134 47.5701Z" fill="#D6D6FA"/>
                 </svg>
                 
         </div>
