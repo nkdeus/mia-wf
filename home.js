@@ -6,9 +6,26 @@ let H1_DECAL_Y = -30;
 let H1_DELAY = 1666;
 
 // Tableau de mots pour l'animation
-let words = ["accès", "apps", "users", "couts", "sass"];
+let words = [];
 let usedWords = []; // Tableau pour suivre les mots déjà utilisés
 let isFirstAnimation = true; // Flag pour suivre si c'est la première animation
+
+// Fonction pour récupérer les mots depuis les éléments dynamiques Webflow
+function fetchWordsFromWebflow() {
+    try {
+        // Récupérer tous les éléments avec la classe 'word-item' (à configurer dans Webflow)
+        const wordElements = document.querySelectorAll('.hero-word-item');
+        words = Array.from(wordElements).map(element => element.textContent.trim());
+        
+        if (words.length === 0) {
+            throw new Error('Aucun mot trouvé');
+        }
+    } catch (error) {
+        console.error('Erreur lors de la récupération des mots:', error);
+        // Fallback sur des mots par défaut en cas d'erreur
+        words = ["accès", "SaaS", "profils", "coûts"];
+    }
+}
 
 function initH1Intro() {
     const h1 = document.querySelector('h1');
@@ -187,7 +204,11 @@ function initHeroBackground() {
 document.addEventListener('DOMContentLoaded', () => {
     // Enregistrer ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(SplitText) 
+    gsap.registerPlugin(SplitText);
+    
+    // Récupérer les mots depuis les éléments Webflow
+    fetchWordsFromWebflow();
+    
     // Initialiser le background du hero
     initHeroBackground();
     
