@@ -77,23 +77,14 @@ function initTextAnimation() {
     // Animation initiale
     gsap.set(chars, { opacity: 0, y: H1_DECAL_Y * -1 });
     
+    let currentWordIndex = 0;
+    
     function animateText() {
-        // Si tous les mots ont été utilisés, réinitialiser la liste
-        if(isFirstAnimation){
-            usedWords.push(words[0]);
-        }
-        if (usedWords.length === words.length) {
-            usedWords = [];
-        }
+        // Sélectionner le mot suivant dans l'ordre
+        const word = words[currentWordIndex];
+        currentWordIndex = (currentWordIndex + 1) % words.length; // Boucler sur la liste des mots
         
-        // Filtrer les mots non utilisés
-        const availableWords = words.filter(word => !usedWords.includes(word));
-        
-        // Sélectionner un mot aléatoire parmi les mots disponibles
-        const randomWord = availableWords[Math.floor(Math.random() * availableWords.length)];
-        usedWords.push(randomWord); // Ajouter le mot à la liste des mots utilisés
-        
-        span.textContent = randomWord;
+        span.textContent = word;
         
         // Recréer le SplitText avec le nouveau mot
         splitText.revert();
@@ -137,7 +128,7 @@ function initTextAnimation() {
                             animateText();
                         }
                     });
-                }, H1_DELAY); // Attendre 10 seconde avant de changer le mot
+                }, H1_DELAY);
             }
         });
     }
