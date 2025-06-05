@@ -154,11 +154,14 @@ function initHeroBackground() {
 
     // Animer chaque icône avec ScrollTrigger
     heroIcons.forEach((icon, index) => {
-        // Générer une valeur Y aléatoire entre -80 et -30
-        const randomY = gsap.utils.random(-40, -10);
+        // Générer une valeur Y aléatoire entre 10 et 40 (inversé pour descendre)
+        const randomY = gsap.utils.random(-10, -30);
         // Calculer l'opacité relative à la distance Y (plus la distance est grande, plus l'ombre est visible)
-        const shadowOpacity = gsap.utils.mapRange(-40, -10, 0.3, 0.7, randomY);
-        
+       
+        gsap.set(icon.querySelector('#icon'), {
+            y: randomY
+        });
+     
         // Appliquer le délai uniquement pour les icônes en haut
         const isTopIcon = topIcons.includes(icon);
         const delay = isTopIcon ? index * DELAY_INCREMENT : 0;
@@ -171,23 +174,11 @@ function initHeroBackground() {
                 toggleActions: "play none none reverse"
             },
             duration: 1.5,
-            y: randomY,
+            y: -2,
             delay: delay,
             ease: EASE
         });
 
-        // Animation de l'ombre
-        gsap.to(icon.querySelector('#shadow'), {
-            scrollTrigger: {
-                trigger: icon,
-                start: SCROLL_TRIGGER_START,
-                toggleActions: "play none none reverse"
-            },
-            duration: 1.5,
-            opacity: shadowOpacity,
-            delay: delay,
-            ease: EASE
-        });
     });
 }
 
