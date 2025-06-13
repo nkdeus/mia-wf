@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mia - FAQ</title>
+    <script src="faq.js"></script>
+
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .faq-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            padding-top: 0;
+            transition: grid-template-rows .3s, padding-top .3s;
+            overflow: hidden;
+        }
+
+        .faq-content > div {
+            min-height: 0;
+        }
+
+        .faq-item-title.open .faq-content {
+            grid-template-rows: 1fr;
+            padding-top: 1rem;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="faq-con max-w-640 w-dyn-list">
+        <div role="list" class="faq-list w-dyn-items">
+            <div role="listitem" class="faq-item-title w-dyn-item">
+                <div class="w-layout-hflex faq-question">
+                    <h3 class="faq-title fs-24 semi-bold">Quels sont les différents types de connecteurs dans MIA ?</h3>
+                    <img src="https://cdn.prod.website-files.com/65fc49e19327f0b1208978fd/684aa43e9bf5c3a843454d7c_faq-arrow-down.svg"
+                        loading="lazy" alt="" class="faq-arrow">
+                </div>
+                <div class="faq-content">
+                    <div class="w-richtext">
+                        <p>Les <strong>connecteurs </strong>(aussi appelés "intégrations") désignent dans MIA les
+                            différents logiciels SaaS que vous liez à la plateforme pour les gérer. Il en existe
+                            différents types qui ne permettent pas de réaliser les mêmes actions, voici le détail :</p>
+                        <figure class="w-richtext-align-normal w-richtext-figure-type-image">
+                            <div><img
+                                    src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684a9b5bfdba2583a1e7b15b_slack.svg"
+                                    loading="lazy" alt=""></div>
+                        </figure>
+                        <ul role="list">
+                            <li><strong>l'intégration complète</strong> : est <strong>un connecteur pour lequel toutes
+                                    les options de gestion des accès et des identités sont disponibles depuis MIA.
+                                </strong>Pour rappel, ces options sont : la récupération du listing utilisateur depuis
+                                le SaaS, la création et la suppression d'un utilisateur, la modération de ses droits
+                                d'accès (ajout ou retrait d'accès à un SaaS) et l'édition de ses informations.</li>
+                        </ul>
+                        <figure class="w-richtext-align-normal w-richtext-figure-type-image">
+                            <div><img
+                                    src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684a9cbde1d0100dbd513b9d_sellsy.svg"
+                                    loading="lazy" alt=""></div>
+                        </figure>
+                        <ul role="list">
+                            <li><strong>L'intégration partielle</strong> : c'est <strong>un connecteur pour lequel
+                                    certaines options seulement sont disponibles. La récupération du listing utilisateur
+                                    est un prérequis, et sera donc disponible</strong> pour toutes les intégrations
+                                complètes et partielles. Pour ce qui est de la création ou la suppression, cela dépendra
+                                des fonctionnalités proposées par les développeurs du SaaS en question. Les options
+                                disponibles seront visibles sur la page de présentation de l'intégration concernée.</li>
+                        </ul>
+                        <figure class="w-richtext-align-normal w-richtext-figure-type-image">
+                            <div><img
+                                    src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684a9cde5c6ad3c691a1f3bf_microsoft.svg"
+                                    loading="lazy" alt=""></div>
+                        </figure>
+                        <ul role="list">
+                            <li><strong>Le connecteur-rappel</strong> (dit connecteur universel): &nbsp;est <strong>une
+                                    fonctionnalité MIA qui permet de créer un "rappel" sous la forme d'un connecteur
+                                    pour un service tiers</strong>. S'il ne s'agit pas d'une intégration au même titre
+                                que les deux précédentes, ce connecteur vous aide à centraliser votre gestion des
+                                utilisateurs.</li>
+                        </ul>
+                        <p>Retrouvez <strong>la liste complète des intégrations disponibles sur MIA</strong> et les
+                            étapes pour les configurer.</p>
+                    </div>
+                </div>
+            </div>
+            <div role="listitem" class="faq-item-title w-dyn-item">
+                <div class="w-layout-hflex faq-question">
+                    <h3 class="faq-title fs-24 semi-bold">Les anomalies, comment ça marche ?</h3><img
+                        src="https://cdn.prod.website-files.com/65fc49e19327f0b1208978fd/684aa43e9bf5c3a843454d7c_faq-arrow-down.svg"
+                        loading="lazy" alt="" class="faq-arrow">
+                </div>
+                <div class="faq-content">
+                    <div class="w-richtext">
+                        <p>L'un des aspects fonctionnels principaux de MIA est <strong>la gestion des
+                                utilisateurs</strong>. Parmi les fonctionnalités comprises dans ce module, la détection
+                            des anomalies nécessite quelques précisions.</p>
+                        <p>Dans MIA, <strong>est considérée comme anomalie la connexion à un SaaS d'une adresse email
+                                dont le nom de domaine ne correspond pas à celui renseigné lors de
+                                l'inscription</strong> à la plateforme.</p>
+                        <p>Exemple : &nbsp;votre entreprise s'appelle collaboration.fr. Les collaborateurs de votre
+                            entreprise possèdent tous une adresse email professionnelle qui finit par @collaboration.fr.
+                            Vous rentrez donc le nom de domaine "collaboration.fr" lorsque vous vous inscrivez sur MIA.
+                        </p>
+                        <p>À partir de là, toutes les adresses email ne finissant pas par cet indicatif et qui tentent
+                            de se connecter à vos SaaS seront cataloguées comme anomalies par MIA.</p>
+                        <figure class="w-richtext-align-normal w-richtext-figure-type-image">
+                            <div><img
+                                    src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684a9ed73f0d222f176219fa_faq-mails.svg"
+                                    loading="lazy" alt=""></div>
+                        </figure>
+                        <p>Lorsque cela se produit, vous disposez de plusieurs actions pour traiter l'anomalie :</p>
+                        <p><strong>1. Créer un utilisateur</strong> à partir d'une adresse email détectée.</p>
+                        <figure class="w-richtext-align-normal w-richtext-figure-type-image">
+                            <div><img
+                                    src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684a9f49205a321a3871ce2a_creer.svg"
+                                    loading="lazy" alt=""></div>
+                        </figure>
+                        <p><strong>2. Supprimer définitivement</strong> l'adresse détectée.</p>
+                        <figure class="w-richtext-align-normal w-richtext-figure-type-image">
+                            <div><img
+                                    src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684a9f6e8d422d65a5f8f3cf_supprimer.svg"
+                                    loading="lazy" alt=""></div>
+                        </figure>
+                        <p><strong>3. Fusionner l'adresse détectée</strong> avec un compte existant.</p>
+                        <figure class="w-richtext-align-normal w-richtext-figure-type-image">
+                            <div><img
+                                    src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684a9f8cd98625d3571a35c4_fusionner.svg"
+                                    loading="lazy" alt=""></div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -41,9 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    
+
+    // Appeler slideNews au chargement
     window.addEventListener('load', () => {
         initSlider();
+      
     });
+
+
 
 }); 
 

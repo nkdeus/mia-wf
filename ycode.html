@@ -24,11 +24,27 @@
             position: relative;
             overflow: visible;
         }
+
+        #news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .news-item {
     </style>
 </head>
 
 <body>
-
+    <div id="news-list" class="container">
+        <div class="news-item">
+            <div class="news-item-content">
+                <p>
+                    Lorem ipsum dolor
+                </p>
+            </div>
+        </div>
+    </div>
     <div id="stepper-container" class="flex-shrink-0 lg:w-[100%] w-[100%] pl-[32px]">
         <div class="stepper flex gap-[1rem] items-center w-[100%] group" id="stepper" data-component-root="" style=""><span
                 class="block text-[48px] font-bold">1</span><span class="block text-[18px]">Synchronisation de vos

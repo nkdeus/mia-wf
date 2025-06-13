@@ -12,19 +12,12 @@ let isFirstAnimation = true; // Flag pour suivre si c'est la première animation
 
 // Fonction pour récupérer les mots depuis les éléments dynamiques Webflow
 function fetchWordsFromWebflow() {
-    try {
-        // Récupérer tous les éléments avec la classe 'word-item' (à configurer dans Webflow)
-        const wordElements = document.querySelectorAll('.hero-word-item');
-        words = Array.from(wordElements).map(element => element.textContent.trim());
-        
-        if (words.length === 0) {
-            throw new Error('Aucun mot trouvé');
-        }
-    } catch (error) {
-        console.error('Erreur lors de la récupération des mots:', error);
-        // Fallback sur des mots par défaut en cas d'erreur
-        words = ["accès", "SaaS", "profils", "coûts"];
-    }
+   
+    const isEnglish = document.documentElement.lang === 'en';
+    words = isEnglish 
+        ? ["access", "SaaS", "profiles", "costs"]
+        : ["accès", "SaaS", "profils", "coûts"];
+
 }
 
 function initH1Intro() {
