@@ -56,6 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 scrollTo: {
                     y: targetPosition - 120
                 },
+                onComplete: function() {
+                    setTimeout(function() {
+                        document.body.classList.add('scrolling');
+                    }, 100);
+                },
                 ease: "Linear.easeNone"
             });
         });
