@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         var li = document.createElement('li');
         var a = document.createElement('a');
-        a.href = '#' + h2.id;
+
         a.textContent = h2.textContent;
         
         a.addEventListener('click', function(e) {
