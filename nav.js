@@ -40,19 +40,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // Ajouter la classe active au lien cliqué
             this.classList.add('active');
             
+            // Calculer la position Y du H2 cible
+            var targetElement = document.getElementById(h2.id);
+            var rect = targetElement.getBoundingClientRect();
+            var targetPosition = rect.top + window.scrollY;
+            
             // Utiliser GSAP pour un scroll fluide avec offset
             gsap.to(window, {
-                duration: 0.5,
+                duration: 0.3,
                 scrollTo: {
-                    y: '#' + h2.id,
-                    offsetY: 200
+                    y: targetPosition - 160,
+                    offsetY: 0
                 },
-                ease: "Linear.easeNone",
-                onComplete: function() {
-                    setTimeout(function() {
-                        document.body.classList.add('scrolling');
-                    }, 100);
-                }
+                ease: "Linear.easeNone"
             });
         });
         
