@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             gsap.to(window, {
                 duration: 0.5,
                 scrollTo: {
-                    y: h2.id,
+                    y: '#' + h2.id,
                     offsetY: idx === 0 ? 240 : 120
                 },
                 ease: "power2.inOut"
