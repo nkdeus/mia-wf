@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         var li = document.createElement('li');
         var a = document.createElement('a');
-
+        a.dataset.target = '#' + h2.id;
         a.textContent = h2.textContent;
         
         a.addEventListener('click', function(e) {
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (activeSection) {
             var activeLink = navLinks.find(function(link) {
-                return link.getAttribute('href') === '#' + activeSection.id;
+                return link.dataset.target === '#' + activeSection.id;
             });
             if (activeLink) {
                 activeLink.classList.add('active');
