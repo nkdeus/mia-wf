@@ -40,15 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // Ajouter la classe active au lien cliqué
             this.classList.add('active');
             
-            var targetElement = document.getElementById(h2.id);
             // Utiliser GSAP pour un scroll fluide avec offset
             gsap.to(window, {
                 duration: 1,
                 scrollTo: {
-                    y: targetElement,
-                    offsetY: 260
+                    y: '#' + h2.id,
+                    offsetY: 100
                 },
-                ease: "power2.out"
+                ease: "power1.inOut"
             });
         });
         
