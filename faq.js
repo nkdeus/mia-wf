@@ -1,5 +1,8 @@
 // Configuration globale
 document.addEventListener('DOMContentLoaded', () => {
+    // Enregistrer le plugin ScrollTo
+    gsap.registerPlugin(ScrollToPlugin);
+    
     // Sélectionner tous les éléments FAQ
     const faqItems = document.querySelectorAll('.faq-question');
 

@@ -1,6 +1,9 @@
 // nav.js : insertion dynamique d'un menu de navigation dans #side-menu
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Enregistrer le plugin ScrollTo
+    gsap.registerPlugin(ScrollToPlugin);
+    
     var menuContainer = document.getElementById('menu-container');
     var content = document.getElementById('content');
     if (!menuContainer || !content) return;
@@ -38,13 +41,14 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
             
             var targetElement = document.getElementById(h2.id);
-            // Calculer la position absolue de l'élément dans la page
-            var rect = targetElement.getBoundingClientRect();
-            var targetPosition = rect.top + window.scrollY - 100; // Position absolue - 200px offset
-            console.log(targetPosition);
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
+            // Utiliser GSAP pour un scroll fluide avec offset
+            gsap.to(window, {
+                duration: 1,
+                scrollTo: {
+                    y: targetElement,
+                    offsetY: 100
+                },
+                ease: "power2.out"
             });
         });
         
