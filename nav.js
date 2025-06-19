@@ -40,19 +40,21 @@ document.addEventListener('DOMContentLoaded', function() {
             // Ajouter la classe active au lien cliqué
             this.classList.add('active');
             
-            // Calculer la position Y du H2 cible
+            // Calculer la position Y du H2 cible de manière stable
             var targetElement = document.getElementById(h2.id);
-            var rect = targetElement.getBoundingClientRect();
-            var targetPosition = rect.top + window.scrollY - 300;
-            console.log(targetPosition);
-            console.log(window.scrollY);
-            console.log(rect.top);
+            var contentRect = content.getBoundingClientRect();
+            var targetRect = targetElement.getBoundingClientRect();
+            var contentOffset = contentRect.top + window.scrollY;
+            var targetPosition = targetRect.top + window.scrollY;
+            console.log('Content offset:', contentOffset);
+            console.log('Target element position:', targetRect.top + window.scrollY);
+            console.log('Final target position:', targetPosition);
 
             // Utiliser GSAP pour un scroll fluide avec offset
             gsap.to(window, {
                 duration: 0.3,
                 scrollTo: {
-                    y: targetPosition
+                    y: targetPosition - 120
                 },
                 ease: "Linear.easeNone"
             });
