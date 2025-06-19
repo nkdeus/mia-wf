@@ -52,16 +52,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Utiliser GSAP pour un scroll fluide avec offset
             gsap.to(window, {
-                duration: 0.3,
+                duration: 0.5,
                 scrollTo: {
                     y: targetPosition - (idx === 0 ? 240 : 120)
                 },
-                onComplete: function() {
-                    setTimeout(function() {
-                        document.body.classList.add('scrolling');
-                    }, 100);
-                },
-                ease: "Linear.easeNone"
+                ease: "power2.inOut"
             });
         });
         
