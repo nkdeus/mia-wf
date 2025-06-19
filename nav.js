@@ -38,7 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
             
             var targetElement = document.getElementById(h2.id);
-            var targetPosition = targetElement.offsetTop - 400; // Offset de 50px au-dessus de la cible
+            // Calculer la position absolue de l'élément dans la page
+            var rect = targetElement.getBoundingClientRect();
+            var targetPosition = rect.top + window.scrollY - 100; // Position absolue - 200px offset
             console.log(targetPosition);
             window.scrollTo({
                 top: targetPosition,
