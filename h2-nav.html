@@ -1,0 +1,158 @@
+<style>
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+}
+.container-flex {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+ 
+}
+#side-menu {
+
+  min-width: 220px;
+  max-width: 260px;
+
+  background: #f5f5fa;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  
+}
+
+#side-menu li{
+    list-style: none;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+a{
+    text-decoration: none;
+    opacity: 0.5;
+    &.active{
+        opacity: 1;
+    }
+}
+#content {
+  flex: 1 1 0;
+  width: auto;
+  background: #fff;
+  padding: 32px 24px;
+
+}
+#content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+p{
+    margin-top: 400px;
+}
+</style>
+<div class="container-flex">
+    <div id="side-menu">
+        <div>
+            <div>Date</div>
+            <div>5/4/2024</div>
+        </div>
+        <div id="menu-container">
+            
+        </div>
+    </div>
+    <div id="content"><img src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684daeaeafa40de85e727775_update-2.1.png"
+            loading="lazy" alt="" sizes="(max-width: 767px) 93vw, (max-width: 991px) 92vw, 96vw"
+            srcset="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684daeaeafa40de85e727775_update-2.1-p-500.png 500w, https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684daeaeafa40de85e727775_update-2.1-p-800.png 800w, https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684daeaeafa40de85e727775_update-2.1-p-1080.png 1080w, https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684daeaeafa40de85e727775_update-2.1.png 1100w">
+        <div>
+            <h2>En bref</h2>
+            <ul>
+                <li>il était une crémiere</li>
+                <li>qui allait</li>
+                <li>au marché</li>
+                <li>elle portait sur sa tête</li>
+                <li>du lait</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Modifications techniques</h2>
+            <ul>
+                <li>Configuration d'ESLint pour qu'il analyse uniquement les fichiers commités.</li>
+                <li>Activation automatique de la maintenance lors des déploiements en production.</li>
+                <li>Renforcement de la sécurité de l'accès au back-office.</li>
+                <li>Correction du système d'authentification OAuth2.</li>
+                <li>Verrouillage des workflows de l'application en fonction du statut de l'utilisateur.</li>
+                <li>Ajout d'un "kill switch" par connecteur, modifiable depuis le back-office.</li>
+                <li>Ajout de la CI sur la branche dev.</li>
+                <li>Modification du système de log.</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Nouveaux connecteurs</h2>
+            <div>
+                <div>
+                    <div><a href="/les-integrations/clickup">
+                            <div><img
+                                    src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/67e67460f44bee05c5ee0b68_Company%3DClickup%2C%20Property%3DDefault.svg"
+                                    loading="lazy" alt=""></div>
+                            <div>Clickup</div>
+                        </a>
+                        <div>
+                            <div>
+                                <div><img
+                                        src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/6850594746c12953c7eda79f_dot-ON.svg"
+                                        loading="lazy" alt="">
+                                    <div>Ajout</div>
+                                </div>
+                                <div><img
+                                        src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/6850594746c12953c7eda79f_dot-ON.svg"
+                                        loading="lazy" alt="">
+                                    <div>Listing</div>
+                                </div>
+                                <div><img
+                                        src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/6850594746c12953c7eda79f_dot-ON.svg"
+                                        loading="lazy" alt="">
+                                    <div>Suppression</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div><a href="/les-integrations/dropbox">
+                            <div><img
+                                    src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/67e6741bbc4aaac1f9fd23d5_Company%3DDropbox%2C%20Property%3DDefault.svg"
+                                    loading="lazy" alt=""></div>
+                            <div>Dropbox</div>
+                        </a>
+                        <div>
+                            <div>
+                                <div>No items found.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div><a href="/les-integrations/github">
+                            <div><img
+                                    src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/67e674064bdc238756893d5d_Company%3DGithub%2C%20Property%3DDefault.svg"
+                                    loading="lazy" alt=""></div>
+                            <div>Github</div>
+                        </a>
+                        <div>
+                            <div>
+                                <div>No items found.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="nav.js"></script>
+</div>
