@@ -40,21 +40,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Ajouter la classe active au lien cliqué
             this.classList.add('active');
             
-            // Calculer la position Y du H2 cible de manière stable
-            var targetElement = document.getElementById(h2.id);
-            var contentRect = content.getBoundingClientRect();
-            var targetRect = targetElement.getBoundingClientRect();
-            var contentOffset = contentRect.top + window.scrollY;
-            var targetPosition = targetRect.top + window.scrollY;
-            console.log('Content offset:', contentOffset);
-            console.log('Target element position:', targetRect.top + window.scrollY);
-            console.log('Final target position:', targetPosition);
-
             // Utiliser GSAP pour un scroll fluide avec offset
             gsap.to(window, {
                 duration: 0.5,
                 scrollTo: {
-                    y: targetPosition - (idx === 0 ? 240 : 120)
+                    y: h2.id,
+                    offsetY: idx === 0 ? 240 : 120
                 },
                 ease: "power2.inOut"
             });
