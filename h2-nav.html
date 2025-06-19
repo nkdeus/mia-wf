@@ -54,7 +54,56 @@ a{
 p{
     margin-top: 400px;
 }
+
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 40px;
+    margin: 0 0 40px 0;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin: 0;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 20px;
+        margin: 0 0 30px 0;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
 </style>
+<div class="hero-section">
+    <h1 class="hero-title">Mise à jour 2.1 - Nouveaux connecteurs et améliorations techniques</h1>
+    <p class="hero-subtitle">Découvrez les dernières améliorations de notre plateforme avec l'ajout de nouveaux connecteurs et des optimisations techniques importantes.</p>
+</div>
 <div class="container-flex">
     <div id="side-menu">
         <div>
@@ -65,7 +114,8 @@ p{
             
         </div>
     </div>
-    <div id="content"><img src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684daeaeafa40de85e727775_update-2.1.png"
+    <div id="content">
+        <img src="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684daeaeafa40de85e727775_update-2.1.png"
             loading="lazy" alt="" sizes="(max-width: 767px) 93vw, (max-width: 991px) 92vw, 96vw"
             srcset="https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684daeaeafa40de85e727775_update-2.1-p-500.png 500w, https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684daeaeafa40de85e727775_update-2.1-p-800.png 800w, https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684daeaeafa40de85e727775_update-2.1-p-1080.png 1080w, https://cdn.prod.website-files.com/65fc49e19327f0b120897959/684daeaeafa40de85e727775_update-2.1.png 1100w">
         <div>

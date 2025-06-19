@@ -49,8 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             gsap.to(window, {
                 duration: 0.3,
                 scrollTo: {
-                    y: targetPosition - 160,
-                    offsetY: 0
+                    y: targetPosition - 160
                 },
                 ease: "Linear.easeNone"
             });
