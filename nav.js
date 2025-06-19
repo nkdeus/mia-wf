@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
             
             var targetElement = document.getElementById(h2.id);
-            var targetPosition = targetElement.offsetTop - 200; // Offset de 50px au-dessus de la cible
+            var targetPosition = targetElement.offsetTop - 400; // Offset de 50px au-dessus de la cible
+            console.log(targetPosition);
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
