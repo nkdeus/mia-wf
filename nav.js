@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             gsap.to(window, {
                 duration: 0.3,
                 scrollTo: {
-                    y: targetPosition - 120
+                    y: targetPosition - (idx === 0 ? 240 : 120)
                 },
                 onComplete: function() {
                     setTimeout(function() {
