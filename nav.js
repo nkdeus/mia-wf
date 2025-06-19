@@ -47,7 +47,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     y: '#' + h2.id,
                     offsetY: 100
                 },
-                ease: "power1.inOut"
+                ease: "power1.inOut",
+                onUpdate: function() {
+                    document.body.classList.remove('scrolling');
+                }
             });
         });
         
