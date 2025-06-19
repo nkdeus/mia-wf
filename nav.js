@@ -44,14 +44,14 @@ document.addEventListener('DOMContentLoaded', function() {
             gsap.to(window, {
                 duration: 0.5,
                 scrollTo: {
-                    y: '#' + h2.id
+                    y: '#' + h2.id,
+                    offsetY: 200
                 },
                 ease: "Linear.easeNone",
-                onUpdate: function() {
-                    document.body.classList.add('scrolling');
-                },
                 onComplete: function() {
-                    document.body.classList.add('scrolling');
+                    setTimeout(function() {
+                        document.body.classList.add('scrolling');
+                    }, 100);
                 }
             });
         });
