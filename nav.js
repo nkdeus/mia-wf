@@ -43,13 +43,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Calculer la position Y du H2 cible
             var targetElement = document.getElementById(h2.id);
             var rect = targetElement.getBoundingClientRect();
-            var targetPosition = rect.top + window.scrollY;
-            
+            var targetPosition = rect.top + window.scrollY - 300;
+            console.log(targetPosition);
+            console.log(window.scrollY);
+            console.log(rect.top);
+
             // Utiliser GSAP pour un scroll fluide avec offset
             gsap.to(window, {
                 duration: 0.3,
                 scrollTo: {
-                    y: targetPosition - 160
+                    y: targetPosition
                 },
                 ease: "Linear.easeNone"
             });
