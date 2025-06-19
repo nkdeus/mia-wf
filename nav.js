@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 duration: 1,
                 scrollTo: {
                     y: targetElement,
-                    offsetY: 100
+                    offsetY: 260
                 },
                 ease: "power2.out"
             });
